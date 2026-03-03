@@ -1,0 +1,32 @@
+# ─── React Frontend (ml/) ───
+node_modules/
+dist/
+stats.dt
+.env
+.env.local
+
+# ─── Python Backend (ml-backend/) ───
+
+# Environments
+ml-backend/venv/
+ml-backend/.venv/
+ml-backend/env/
+ml-backend/.env/
+
+# Byte-compiled / optimized / DLL files
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/*.so
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+
+# Models (optional: ignore if you don't want to track large binary weights)
+# ml-backend/models/*.pt
+# ml-backend/models/*.pkl
