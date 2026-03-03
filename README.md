@@ -1,4 +1,4 @@
-# ML Portal — AI-Powered Face Attendance & Score Prediction
+# AI-Powered Face Attendance & Score Prediction — ML Portal
 
 This is the **React + Vite** teacher-facing portal that connects to both the Node.js backend and the Python ML backend. It provides three AI-powered features: student face registration, face-recognition attendance marking with liveness detection, and O/L score prediction.
 
