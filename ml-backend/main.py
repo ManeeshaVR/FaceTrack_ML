@@ -110,7 +110,7 @@ def check_liveness(req: LivenessRequest):
 @app.post("/recognize", response_model=RecognizeResponse)
 async def recognize_face(req: RecognizeRequest):
     NODE_BACKEND = "http://localhost:4000/api"
-    SIMILARITY_THRESHOLD = 0.95
+    SIMILARITY_THRESHOLD = 0.96
     
     # 1. Embed query image
     pil_image = decode_image(req.image_b64)

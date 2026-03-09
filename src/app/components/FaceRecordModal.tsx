@@ -14,6 +14,7 @@ type CaptureStatus = 'idle' | 'capturing' | 'processing' | 'saving' | 'done' | '
 
 export function CameraModal({ isOpen, onClose, studentName, studentId, studentMongoId }: CameraModalProps) {
   const [stream, setStream] = useState<MediaStream | null>(null);
+  const streamRef = useRef<MediaStream | null>(null);
   const [cameraError, setCameraError] = useState('');
   const [permissionDenied, setPermissionDenied] = useState(false);
 
@@ -71,10 +72,11 @@ export function CameraModal({ isOpen, onClose, studentName, studentId, studentMo
   };
 
   const stopCamera = () => {
-    if (stream) {
-      stream.getTracks().forEach(t => t.stop());
-      setStream(null);
+    if (streamRef.current) {
+      streamRef.current.getTracks().forEach(t => t.stop());
+      streamRef.current = null;
     }
+    setStream(null);
   };
 
   // ── capture a single frame as base64 ─────────────────────────────
@@ -203,7 +205,7 @@ export function CameraModal({ isOpen, onClose, studentName, studentId, studentMo
               </div>
             ) : (
               <>
-                <video ref={videoRef} autoPlay playsInline muted className="w-full h-full object-cover" />
+                <video ref={videoRef} autoPlay playsInline muted className="w-full h-full object-cover" style={{ transform: 'scaleX(-1)' }} />
 
                 {/* Flash overlay */}
                 {flashActive && <div className="absolute inset-0 bg-white/50 pointer-events-none" />}

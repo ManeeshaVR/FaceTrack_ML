@@ -120,6 +120,7 @@ export default function Students() {
           onClose={() => {
             setIsCameraOpen(false);
             setSelectedStudent(null);
+            fetchStudents();
           }}
           studentName={selectedStudent.name}
           studentId={selectedStudent.id}

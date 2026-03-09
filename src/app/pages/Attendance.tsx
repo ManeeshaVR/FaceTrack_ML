@@ -384,6 +384,7 @@ export default function Attendance() {
                 ref={videoRef}
                 autoPlay playsInline muted
                 className={`w-full h-full object-cover ${!isActive || cameraError ? 'hidden' : ''}`}
+                style={{ transform: 'scaleX(-1)' }}
               />
               <canvas ref={canvasRef} className="hidden" />
 
